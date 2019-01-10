@@ -5,9 +5,14 @@
   "time": "1 minute",
   "details": {
     "steps": [{
-      "title": "Step 1 - Deploy The K8s Cluster",
+      "title": "Step 1 - Initialise Master",
       "text": "step1.md"
-    }],
+    },
+    {
+      "title": "Step 2 - Join Cluster",
+      "text": "step2.md"
+    }
+    ],
     "intro": {
       "text": "intro.md",
       "credits": ""
