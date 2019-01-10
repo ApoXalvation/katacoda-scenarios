@@ -1,10 +1,15 @@
-Once the Master has initialised, additional nodes can join the cluster as long as they have the correct token. The tokens can be managed via `kubeadm token`, for example<br>
-`kubeadm token list`{{execute HOST1}}
+
+
 
 ## Task
 
-On the second node, run the command to join the cluster providing the IP address of the Master node. <br>
-`kubeadm join --discovery-token-unsafe-skip-ca-verification --token=102952.1a7dd4cc8d1f4cc5 [[HOST_IP]]:6443`{{execute HOST2}} <br>
-This is the same command provided after the Master has been initialised.<br>
-<br>
-The `--discovery-token-unsafe-skip-ca-verification` tag is used to bypass the Discovery Token verification. As this token is generated dynamically, we couldn't include it within the steps. When in production, use the token provided by `kubeadm init`.
+`apt-get update && apt-get install nfs-kernel-server`{{execute HOST2}}
+`apt-get update && apt-get install nfs-common`{{execute HOST1}}
+`mkdir /root/nfs-share`{{execute HOST2}}
+`echo "/root/nfs-share [[HOST1_IP]]/32(rw,fsid=0,insecure,no_subtree_check,async)" >> /etc/exports`{{execute HOST2}}
+`echo "portmap: [[HOST1_IP]]/32" >> /etc/hosts.allow`{{execute HOST2}}
+`echo "portmap:ALL" >> /etc/hosts.deny`{{execute HOST2}}
+`service nfs-kernel-server restart`{{execute HOST2}}
+`mount -t nfs -o proto=tcp,port=2049 [[HOST2_IP]]:/ /root/node1`{{execute HOST1}}
+`touch /root/nfs-share/test`{{execute HOST2}}
+`ls /root/node1/`{{execute HOST1}}
