@@ -2,7 +2,7 @@ Once the Master has initialised, additional nodes can join the cluster as long a
 
 
 https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com/
-
+[[MASTER_IP]]
 ## Task
 
 [[HOST_SUBDOMAIN]]
