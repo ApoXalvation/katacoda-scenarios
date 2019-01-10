@@ -1,5 +1,8 @@
 Once the Master has initialised, additional nodes can join the cluster as long as they have the correct token. The tokens can be managed via `kubeadm token`, for example `kubeadm token list`{{execute master}}}
 
+
+https://[[HOST_SUBDOMAIN]]-8500-[[KATACODA_HOST]].environments.katacoda.com/
+
 ## Task
 
 [[HOST_SUBDOMAIN]]
