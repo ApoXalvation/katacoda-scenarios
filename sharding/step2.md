@@ -3,7 +3,7 @@ Once the Master has initialised, additional nodes can join the cluster as long a
 ## Task
 
 On the second node, run the command to join the cluster providing the IP address of the Master node.
-`kubeadm join --discovery-token-unsafe-skip-ca-verification --token=102952.1a7dd4cc8d1f4cc5 172.17.0.54:6443`{{execute node01}}
+`kubeadm join --discovery-token-unsafe-skip-ca-verification --token=102952.1a7dd4cc8d1f4cc5 [[master_ip]]:6443`{{execute node01}}
 This is the same command provided after the Master has been initialised.<br>
 <br>
 The `--discovery-token-unsafe-skip-ca-verification` tag is used to bypass the Discovery Token verification. As this token is generated dynamically, we couldn't include it within the steps. When in production, use the token provided by `kubeadm init`.
