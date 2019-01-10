@@ -2,6 +2,8 @@ Once the Master has initialised, additional nodes can join the cluster as long a
 
 ## Task
 
+[[HOST_SUBDOMAIN]]
+[[KATACODA_HOST]]
 [[master_ip]]
 [[master]]
 On the second node, run the command to join the cluster providing the IP address of the Master node.
