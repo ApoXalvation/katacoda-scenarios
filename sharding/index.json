@@ -5,7 +5,8 @@
   "time": "1 minute",
   "details": {
     "steps": [{
-      "title": "Step 1 - Initialise Master",
+      "title": "Step 1 - Deploy a kubernetes cluster",
+      "code": "step1-foreground.sh",
       "text": "step1.md"
     },
     {

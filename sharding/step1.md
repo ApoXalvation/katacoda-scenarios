@@ -1,17 +1,10 @@
-Kubeadm has been installed on the nodes. Packages are available for Ubuntu 16.04+, CentOS 7 or HypriotOS v1.0.1+.<br>
-<br>
-The first stage of initialising the cluster is to launch the master node. The master is responsible for running the control plane components, etcd and the API server. Clients will communicate to the API to schedule workloads and manage the state of the cluster.
+In this scenario, We are going to deplay a Sharded MongoDB with three replicas (two for shards, and one for config database), and two mongos.<br>
+To add little more real live conditions, We are going to use two nodes with kubernetes cluster on it.<br>
+ Next We will configure persistent volume claims using nfs-client-provisioner - at least You need to change one line to adapt this statefulSet template to cloud enverinoment.<br>
+Also We will try to achive some minimal pod affinity on our two nodes.
 
 ## Task
+For this scenario We use scipt which deplay for us k8s cluster, this save some time:<br>
+`/opt/launch-kubeadm.sh`{{execute HOST1}}<br>
+If You are wondering what does this script do, please take a look <a href src="https://katacoda.com/courses/kubernetes/getting-started-with-kubeadm">this</a> tutorial.
 
-The command below will initialise the cluster with a known token to simplify the following steps.
-
-`kubeadm init --token=102952.1a7dd4cc8d1f4cc5 --kubernetes-version $(kubeadm version -o short)`{{execute HOST1}}
-
-In production, it's recommend to exclude the token causing kubeadm to generate one on your behalf.<br>
-<br>
-To manage the Kubernetes cluster, the client configuration and certificates are required. This configuration is created when kubeadm initialises the cluster. The command copies the configuration to the users home directory and sets the environment variable for use with the CLI.
-
-`sudo cp /etc/kubernetes/admin.conf $HOME/
-sudo chown $(id -u):$(id -g) $HOME/admin.conf
-export KUBECONFIG=$HOME/admin.conf`{{execute HOST1}}
