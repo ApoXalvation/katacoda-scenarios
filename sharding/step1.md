@@ -6,5 +6,8 @@ Also We will try to achive some minimal pod affinity on our two nodes.
 ## Task
 For this scenario We use scipt which deplay for us k8s cluster, this save some time:<br>
 `/opt/launch-kubeadm.sh`{{execute HOST1}}<br>
-If You are wondering what does this script do, please take a look <a href src="https://katacoda.com/courses/kubernetes/getting-started-with-kubeadm">this</a> tutorial.
-
+__If You are wondering what does this script do, please take a look <a href src="https://katacoda.com/courses/kubernetes/getting-started-with-kubeadm">this</a> tutorial.__<br>
+You can now join second host to cluster by running the following command as root:
+`kubeadm join 172.17.0.123:6443 --token 96771a.f608976060d16396 --discovery-token-unsafe-skip-ca-verification`{{execute HOST2}}<br>
+After about one minute all nodes should be ready, You can check status of them using this command:<br>
+`kubectl get nodes`{{execute HOST1}}
