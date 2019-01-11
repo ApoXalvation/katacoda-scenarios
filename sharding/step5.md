@@ -9,7 +9,7 @@ Copy kubernetes configuration files to our working direcotry:<br>
 
 ## Description
 Open configsvr.yaml:<br>
-`less configsvr.yaml`{{execute HOST1}}<br>
+`cat configsvr.yaml`{{execute HOST1}}<br>
 Let me describe the content of configuration.<br>
 The very first part:<br>
 `apiVersion: v1
@@ -21,7 +21,7 @@ metadata:
     name: configsvr
 spec:
   ports:
-  - port: 27019
+  \- port: 27019
     targetPort: 27019
   clusterIP: None
   selector:

@@ -7,7 +7,8 @@ Run below commands for init helm:<br>
 extend its permissions, so Helm can deploy for us whole nfs provisioner:<br>
 `kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default`{{execute HOST1}}<br>
 then install and configure stable nfs-client-provisioner package:<br>
-`helm install --set nfs.server=[[HOST2_IP]] --set nfs.path=/ --name nfs-provisioner stable/nfs-client-provisioner`{{execute HOST1}}<br>
+`helm install --set nfs.server=[[HOST2_IP]] --set nfs.path=/root/nfs-share --name nfs-provisioner stable/nfs-client-provisioner`{{execute HOST1}}<br>
+If You received error `Error: could not find a ready tiller pod` it is becouse helm init does not finish yet, try again in few second<br><br>
 check if all is ready:<br>
 `kubectl get nodes`{{execute HOST1}}<br>
 `kubectl get pods`{{execute HOST1}}<br>
