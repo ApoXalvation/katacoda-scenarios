@@ -13,6 +13,7 @@ define what we want to share and who may connect(host2):<br>
 echo "portmap: [[HOST1_IP]]/32" >> /etc/hosts.allow &&
 echo "portmap:ALL" >> /etc/hosts.deny &&
 service nfs-kernel-server restart`{{execute HOST2}}<br>
+## TESTS
 Our NFS server is up'n'ready, lets test it:<br>
 Prepare mount point on acs1:<br>
 `mkdir /root/node1 &&
