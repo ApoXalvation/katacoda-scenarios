@@ -9,5 +9,5 @@ extend its permissions, so Helm can deploy for us whole nfs provisioner:<br>
 then install and configure stable nfs-client-provisioner package:<br>
 `helm install --set nfs.server=[[HOST2_IP]] --set nfs.path=/ --name nfs-provisioner stable/nfs-client-provisioner`{{execute HOST1}}<br>
 check if all is ready:
-`k get nodes`{{execute HOST1}}
-`k get pods`{{execute HOST1}}
+`kubectl get nodes`{{execute HOST1}}
+`kubectl get pods`{{execute HOST1}}
