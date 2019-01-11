@@ -9,6 +9,18 @@
         {
           "file": "configsvr.yaml",
           "target": "/tmp/"
+        },
+        {
+          "file": "mongos.yaml",
+          "target": "/tmp/"
+        },
+        {
+          "file": "shard1.yaml",
+          "target": "/tmp/"
+        },
+        {
+          "file": "shard2.yaml",
+          "target": "/tmp/"
         }
       ]
     },

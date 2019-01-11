@@ -4,14 +4,14 @@ metadata:
   name: configsvr
   namespace: mongo
   labels:
-    name: mongodb-configsvr
+    name: configsvr
 spec:
   ports:
   - port: 27019
     targetPort: 27019
   clusterIP: None
   selector:
-    role: mongodb-configsvr
+    role: configsvr
 ---
 apiVersion: apps/v1beta2
 kind: StatefulSet
@@ -21,13 +21,13 @@ metadata:
 spec:
   selector:
     matchLabels:
-      role: mongodb-configsvr
+      role: configsvr
   serviceName: configsvr
   replicas: 3
   template:
     metadata:
       labels:
-        role: mongodb-configsvr
+        role: configsvr
         tier: configsvr
     spec:
       terminationGracePeriodSeconds: 10
