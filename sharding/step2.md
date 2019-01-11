@@ -1,5 +1,5 @@
 
-We will need nfs server for persistent volume claims for our shards, so lets configure one on HOST2
+We will need nfs server for persistent volume claims for our shards, so lets configure one on host2
 
 ## Task
 Update and install nfs-kernel-server on host2:<br>

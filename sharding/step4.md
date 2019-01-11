@@ -5,7 +5,7 @@ We have solid basement for MongoDB:<br>
  - ...We used it to deploy nfs-client-provisioner<br>
 
 Now it is time for Mongo, but before that You should take a look at how many things We have running now to achive this basement<br>
-`kubectl get all --all-namespaces`{{execute HOST4}}<br>
+`kubectl get all --all-namespaces`{{execute HOST1}}<br>
 What we do now is create a separate namespace for MongoDB to have things organized<br>
 ## Task
 
@@ -21,4 +21,5 @@ metadata:
 From now We will use _k_ except for kubectl to make things faster:<br>
 `k apply -f namespace.yaml`{{execute HOST1}}<br>
 Now We can check if our new namespace for mongo only was created and what is inside:<br>
-`k get ns; k get all -n mongo`{{execute HOST1}}<br>
+`k get ns`{{execute HOST1}}<br>
+`k get all -n mongo`{{execute HOST1}}<br>
