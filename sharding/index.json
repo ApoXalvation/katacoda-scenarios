@@ -7,8 +7,8 @@
     "assets":{
       "Host1": [
         {
-          "file": "templates/configsvr.yaml",
-          "target": "/tmp/templates/configsvr.yaml"
+          "file": "configsvr.yaml",
+          "target": "/tmp/configsvr.yaml"
         }
       ]
     },
