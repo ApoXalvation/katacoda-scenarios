@@ -3,8 +3,8 @@ If You want to know more about <a href="https://helm.sh/">Helm - package manager
 ## Task
 
 Run below commands for init helm:<br>
-`helm init`{{exxecute HOST1}}<br>
+`helm init`{{execute HOST1}}<br>
 extend its permissions, so Helm can deploy for us whole nfs provisioner:<br>
 `kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default`{{execute HOST1}}<br>
 then install and configure stable nfs-client-provisioner package:<br>
-`helm install --set nfs.server=[[HOST2_IP]] --set nfs.path=/kubernetes stable/nfs-client-provisioner`{{execute HOST1}}<br>
+`helm install --set nfs.server=[[HOST2_IP]] --set nfs.path=/ stable/nfs-client-provisioner`{{execute HOST1}}<br>
