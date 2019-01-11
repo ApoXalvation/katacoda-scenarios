@@ -4,6 +4,14 @@
   "difficulty": "PRO",
   "time": "1 minute",
   "details": {
+    "assets":{
+      "Host1": [
+        {
+          "file": "templates/configsvr.yaml",
+          "target": "/tmp/templates/configsvr.yaml"
+        }
+      ]
+    },
     "steps": [{
       "title": "Step 1 - Deploy a kubernetes cluster",
       "code": "step1-foreground.sh",
@@ -37,14 +45,6 @@
   "environment": {
     "uilayout": "terminal-terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
-  },
-  "assets":{
-    "Host1": [
-      {
-        "file": "templates/configsvr.yaml",
-        "target": "/tmp/templates/configsvr.yaml"
-      }
-    ]
   },
   "backend": {
     "imageid": "kubernetes-cluster"
