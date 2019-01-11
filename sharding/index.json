@@ -20,6 +20,10 @@
     {
       "title": "Step 4 - Prepare to MongoDB shards deploy",
       "text": "step4.md"
+    },
+    {
+      "title": "Step 5 - MongoDB config server",
+      "text": "step5.md"
     }
     ],
     "intro": {

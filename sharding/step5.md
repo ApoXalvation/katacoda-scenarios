@@ -2,6 +2,7 @@ Config servers store the metadata for a sharded cluster. The metadata reflects s
 
 ## Task
 
+Deploy three replicas of MongoDB config server using below command, in next step We analize this template.<br>
 
 `echo '
 apiVersion: v1
@@ -66,4 +67,5 @@ spec:
       resources:
         requests:
           storage: 1Gi
-' > configsvr.yaml`{{execute HOST1}}
+' > configsvr.yaml;
+k apply -f configsvr.yaml`{{execute HOST1}}<br>
