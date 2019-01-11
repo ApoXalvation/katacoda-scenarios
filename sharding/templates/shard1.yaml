@@ -1,0 +1,63 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shard1
+  namespace: mongo
+  labels:
+    name: shard1
+spec:
+  ports:
+  - port: 27018
+    targetPort: 27018
+  clusterIP: None
+  selector:
+    role: shard1
+---
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: shard1
+  namespace: mongo
+spec:
+  selector:
+    matchLabels:
+      role: shard1
+  serviceName: shard1
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        role: shard1
+        tier: shard
+        replicaset: shard1
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: shard1-container
+          image: mongo
+          command:
+            - "mongod"
+            - "--port"
+            - "27018"
+            - "--bind_ip"
+            - "0.0.0.0"
+            - "--replSet"
+            - "shard1"
+            - "--shardsvr"
+            - "--dbpath"
+            - "/mongo-disk"
+          ports:
+            - containerPort: 27018
+          volumeMounts:
+            - name: data
+              mountPath: /mongo-disk
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+      annotations:
+        volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"
+    spec:
+      accessModes: [ "ReadWriteMany" ]
+      resources:
+        requests:
+          storage: 1Gi
