@@ -17,7 +17,7 @@ service nfs-kernel-server restart`{{execute HOST2}}<br>
 Our NFS server is up'n'ready, lets test it:<br>
 Prepare mount point on host1:<br>
 `mkdir /root/host2 &&
-mount -t nfs -o proto=tcp,port=2049 [[HOST2_IP]]:/ /root/node1`{{execute HOST1}}<br>
+mount -t nfs -o proto=tcp,port=2049 [[HOST2_IP]]:/ /root/host2`{{execute HOST1}}<br>
 then You may check if files are accessible on both hosts:<br>
 `touch /root/nfs-share/test`{{execute HOST2}}<br>
 `ls /root/host2/`{{execute HOST1}}<br>
