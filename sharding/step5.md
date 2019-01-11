@@ -77,3 +77,6 @@ We expose on *container port 27019* and then We would like to mount volume named
           storage: 1Gi`<br>
 The *volume.beta.kubernetes.io/storage-class* is that part becouse of which We had to use beta api, and then We can set it to our nfs provider *managed-nfs-storage*. We set *access mode  as read and write* and *request storage 1Gi*.<br>
 <br>
+## Task
+Lets try to deploy the MongoDB config servers<br>
+`k apply -f configsvr.yaml`{{execute HOST1}}<br>
