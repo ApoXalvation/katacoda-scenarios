@@ -16,6 +16,10 @@
     {
       "title": "Step 3 - Install'n'configure nfs-client-provisioner",
       "text": "step3.md"
+    },
+    {
+      "title": "Step 4 - Prepare to MongoDB shards deploy",
+      "text": "step4.md"
     }
     ],
     "intro": {
