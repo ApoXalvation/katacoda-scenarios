@@ -41,8 +41,8 @@
   "assets":{
     "Host1": [
       {
-        "file": "templates",
-        "target": "/tmp/"
+        "file": "templates/configsvr.yaml",
+        "target": "/tmp/templates/configsvr.yaml"
       }
     ]
   },
