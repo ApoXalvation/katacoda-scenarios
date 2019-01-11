@@ -5,4 +5,4 @@ The metadata includes the list of chunks on every shard and the ranges that defi
 ## Task
 
 Copy kubernetes configuration files to our working direcotry:
-`cp /tmp/templates/* ./`{{execute HOST1}}
+`cp /tmp/* ./`{{execute HOST1}}

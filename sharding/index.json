@@ -5,10 +5,10 @@
   "time": "1 minute",
   "details": {
     "assets":{
-      "Host1": [
+      "host01": [
         {
           "file": "configsvr.yaml",
-          "target": "~/"
+          "target": "/tmp/"
         }
       ]
     },
@@ -36,7 +36,7 @@
     ],
     "intro": {
       "text": "intro.md",
-      "credits": ""
+      "credits": "Dawid 'Apoc' Prus"
     },
     "finish": {
       "text": "finish.md"
