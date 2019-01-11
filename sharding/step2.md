@@ -9,9 +9,7 @@ and nfs client on host1:<br>
 then prepare shared sirectory (host2):<br>
 `mkdir /root/nfs-share`{{execute HOST2}}<br>
 define what we want to share and who may connect(host2):<br>
-`echo "/root/nfs-share [[HOST1_IP]]/32(rw,fsid=0,insecure,no_subtree_check,async)" >> /etc/exports &&
-echo "portmap: [[HOST1_IP]]/32" >> /etc/hosts.allow &&
-echo "portmap:ALL" >> /etc/hosts.deny &&
+`echo "/root/nfs-share [[HOST1_IP]]/16(rw,fsid=0,insecure,no_subtree_check,async)" >> /etc/exports &&
 service nfs-kernel-server restart`{{execute HOST2}}<br>
 ## Tests
 Our NFS server is up'n'ready, lets test it:<br>
