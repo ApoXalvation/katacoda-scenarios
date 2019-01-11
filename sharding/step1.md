@@ -4,8 +4,8 @@ Next, We will configure persistent volume claims for each shard and config datab
 Also, We will try to achieve some minimal pod affinity for our two nodes.<br>
 
 ## Task
-For this scenario We are using a shell script which deploys for us k8s cluster, this saves some time:<br>
-`/opt/launch-kubeadm.sh` - this command is now running on HOST1, please wait with next steps until it ends<br>
+For this scenario We are using a shell script which deploys for us k8s cluster:<br>
+`/opt/launch-kubeadm.sh` - this command is now running on HOST1, please wait until it ends<br>
 _If You are wondering what does this script do, please take a look at <a href src="https://katacoda.com/courses/kubernetes/getting-started-with-kubeadm">this</a> tutorial._<br><br>
 You can now join the second host to the cluster by running the following command:
 `kubeadm join [[HOST1_IP]]:6443 --token 96771a.f608976060d16396 --discovery-token-unsafe-skip-ca-verification`{{execute HOST2}}<br><br>
