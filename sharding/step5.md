@@ -20,12 +20,13 @@ metadata:
   labels:
     name: configsvr
 spec:
-  ports:<br>  - port: 27019
+  ports:
+  - port: 27019
     targetPort: 27019
   clusterIP: None
   selector:
     role: configsvr
-`
+`{{execute never}}
 <br>
 We use stable kubernetes *api v1* to create *Service* which provides us port 27019 to our kubernetes enverinoment, more about pros od this a while.<br>
 `apiVersion: apps/v1beta2
