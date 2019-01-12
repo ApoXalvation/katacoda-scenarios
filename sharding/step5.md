@@ -22,7 +22,7 @@ metadata:
     name: configsvr
 spec:
   ports:
- ‎  - port: 27019
+‎  - port: 27019
     targetPort: 27019
   clusterIP: None
   selector:
