@@ -12,7 +12,7 @@ Open configsvr.yaml:<br>
 `cat configsvr.yaml`{{execute HOST1}}<br>
 Let me describe the content of configuration.<br>
 The very first part:<br>
-<pre class="file">
+<pre>
 apiVersion: v1
 kind: Service
 metadata:
@@ -27,7 +27,8 @@ spec:
   clusterIP: None
   selector:
     role: configsvr
-</pre><br>
+</pre>
+<br>
 We use stable kubernetes *api v1* to create *Service* which provides us port 27019 to our kubernetes enverinoment, more about pros od this a while.<br>
 `apiVersion: apps/v1beta2
 kind: StatefulSet
