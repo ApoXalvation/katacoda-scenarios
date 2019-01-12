@@ -86,8 +86,11 @@ We expose on *container port 27019* and then We would like to mount volume named
 ‎         requests:
 ‎           storage: 1Gi
 `<br>
-The *volume.beta.kubernetes.io/storage-class* is that part where We set our nfs provider *managed-nfs-storage*. We set *access mode  as read and write* and *request storage 1Gi*.<br>
+The *volume.beta.kubernetes.io/storage-class* is that part where We set our nfs provider *nfs-client*.<br>
+You can check avaible storage classes by:
+`k get sc`{{execute HOST`}}
+We set *access mode  as read and write* and *request storage 1Gi*.<br>
 <br>
 ## Task
-Lets try to deploy the MongoDB config servers<br>
+Lets deploy the MongoDB config servers<br>
 `k apply -f configsvr.yaml`{{execute HOST1}}<br>
