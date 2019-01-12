@@ -95,5 +95,5 @@ We set *access mode  as read and write* and *request storage 1Gi*.<br>
 Lets deploy the MongoDB config servers<br>
 `k apply -f configsvr.yaml`{{execute HOST1}}<br>
 You may observe the process of creating pods and persistent volume claims for them, using below command:<br>
-`watch -n1 'kubectl get all -n mongo; kubectl get pvc -n mongo'`{{execute HOST1}}
+`watch -n1 'kubectl get all -n mongo; kubectl get pvc -n mongo'`{{execute HOST1}}<br>
 Type <kbd>ctr</kbd>+<kbd>c</kbd> to stop watching.

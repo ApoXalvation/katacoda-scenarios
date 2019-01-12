@@ -10,6 +10,6 @@ We create service for both shards, then the StatefulSet with three replicas, the
 To deplay MongoDB shards run:<br>
 `k apply -f shard1.yaml`{{execute HOST1}}<br>
 `k apply -f shard2.yaml`{{execute HOST1}}<br>
-To watch the process use:
-`watch -n1 'kubectl get all -n mongo; kubectl get pvc -n mongo'`{{execute HOST1}}
+To watch the process use:<br>
+`watch -n1 'kubectl get all -n mongo; kubectl get pvc -n mongo'`{{execute HOST1}}<br>
 Type <kbd>ctr</kbd>+<kbd>c</kbd> to stop watching.
