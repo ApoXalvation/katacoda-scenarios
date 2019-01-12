@@ -48,6 +48,10 @@
     {
       "title": "Step 6 - MongoDB shardsr",
       "text": "step6.md"
+    },
+    {
+      "title": "Step 7 - MongoS",
+      "text": "step7.md"
     }
     ],
     "intro": {

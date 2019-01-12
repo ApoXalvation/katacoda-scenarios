@@ -88,7 +88,7 @@ We expose on *container port 27019* and then We would like to mount volume named
 `<br>
 The *volume.beta.kubernetes.io/storage-class* is that part where We set our nfs provider *nfs-client*.<br>
 You can check avaible storage classes by:
-`k get sc`{{execute HOST`}}
+`k get sc`{{execute HOST1}}
 We set *access mode  as read and write* and *request storage 1Gi*.<br>
 <br>
 ## Task
