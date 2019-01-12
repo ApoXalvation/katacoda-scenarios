@@ -13,20 +13,20 @@ Open configsvr.yaml:<br>
 Let me describe the content of configuration.<br>
 The very first part:<br>
 `
-|apiVersion: v1
-|kind: Service
-|metadata:
-|  name: configsvr
-|  namespace: mongo
-|  labels:
-|    name: configsvr
-|spec:
-|  ports:
-|  - port: 27019
-|    targetPort: 27019
-|  clusterIP: None
-|  selector:
-|    role: configsvr
+apiVersion: v1
+kind: Service
+metadata:
+  name: configsvr
+  namespace: mongo
+  labels:
+    name: configsvr
+spec:
+  ports:
+ ‏‏‎  - port: 27019
+    targetPort: 27019
+  clusterIP: None
+  selector:
+    role: configsvr
 `
 <br>
 We use stable kubernetes *api v1* to create *Service* which provides us port 27019 to our kubernetes enverinoment, more about pros od this a while.<br>
