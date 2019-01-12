@@ -44,6 +44,10 @@
     {
       "title": "Step 5 - MongoDB config server",
       "text": "step5.md"
+    },
+    {
+      "title": "Step 6 - MongoDB shardsr",
+      "text": "step6.md"
     }
     ],
     "intro": {
