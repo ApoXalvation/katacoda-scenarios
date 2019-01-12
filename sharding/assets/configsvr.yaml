@@ -53,8 +53,9 @@ spec:
   volumeClaimTemplates:
   - metadata:
       name: data
+      namespace: mongo
       annotations:
-        volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"
+        volume.beta.kubernetes.io/storage-class: "nfs-client"
     spec:
       accessModes: [ "ReadWriteMany" ]
       resources:

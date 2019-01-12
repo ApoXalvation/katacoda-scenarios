@@ -21,7 +21,7 @@ metadata:
     name: configsvr
 spec:
   ports:
-  \- port: 27019
+ &nbsp;- port: 27019
     targetPort: 27019
   clusterIP: None
   selector:
@@ -75,7 +75,7 @@ We expose on *container port 27019* and then We would like to mount volume named
       resources:
         requests:
           storage: 1Gi`<br>
-The *volume.beta.kubernetes.io/storage-class* is that part becouse of which We had to use beta api, and then We can set it to our nfs provider *managed-nfs-storage*. We set *access mode  as read and write* and *request storage 1Gi*.<br>
+The *volume.beta.kubernetes.io/storage-class* is that part where We set our nfs provider *managed-nfs-storage*. We set *access mode  as read and write* and *request storage 1Gi*.<br>
 <br>
 ## Task
 Lets try to deploy the MongoDB config servers<br>

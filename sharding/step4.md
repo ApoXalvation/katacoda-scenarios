@@ -1,8 +1,7 @@
 We have solid basement for MongoDB:<br>
- - We had bootstrap a Kubernetes cluster<br>
- - We had deploy NFS server<br>
- - We had int Helm package manager and...<br>
- - ...We used it to deploy nfs-client-provisioner<br>
+ - Kubernetes cluster<br>
+ - NFS server<br>
+ - nfs-client-provisioner<br>
 
 Now it is time for Mongo, but before that You should take a look at how many things We have running now to achive this basement<br>
 `kubectl get all --all-namespaces`{{execute HOST1}}<br>
