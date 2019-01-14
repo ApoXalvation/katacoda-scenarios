@@ -91,6 +91,10 @@ You can check avaible storage classes by:
 `k get sc`{{execute HOST1}}
 We set *access mode  as read and write* and *request storage 1Gi*.<br>
 <br>
+If You deploing Mongo on the Google Kubernetes Engine, instead of:
+`<200e>         volume.beta.kubernetes.io/storage-class: "managed-nfs-storage"`
+use:
+`        volume.beta.kubernetes.io/storage-class: "fast"`
 ## Task
 Lets deploy the MongoDB config servers<br>
 `k apply -f configsvr.yaml`{{execute HOST1}}<br>

@@ -1,6 +1,6 @@
 In this scenario, We are going to deploy a Sharded MongoDB with two shards.<br>
 To add a bit real-life conditions, We are going to use two nodes with kubernetes cluster on it.<br>
-Next, We will configure persistent volume claims for each shard and config database using nfs-client-provisioner - in the end, You will need to change just  one line to adopt this statefulSet template to a cloud environment.<br>
+Next, We will configure persistent volume claims for each shard and config database using nfs-client-provisioner.<br>
 Also, We will try to achieve some minimal pod affinity for our two nodes.<br>
 
 ## Task
