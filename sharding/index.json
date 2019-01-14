@@ -38,7 +38,7 @@
       "text": "step3.md"
     },
     {
-      "title": "Step 4 - Prepare to MongoDB shards deploy",
+      "title": "Step 4 - Prepare to MongoDB deploy",
       "text": "step4.md"
     },
     {
@@ -46,7 +46,7 @@
       "text": "step5.md"
     },
     {
-      "title": "Step 6 - MongoDB shardsr",
+      "title": "Step 6 - MongoDB shards",
       "text": "step6.md"
     },
     {
@@ -54,7 +54,7 @@
       "text": "step7.md"
     },
     {
-      "title": "Step 8 - Create MongoSB replicasets and cluster",
+      "title": "Step 8 - Initiate MongoDB replicasets and cluster",
       "text": "step8.md"
     }
     ],
