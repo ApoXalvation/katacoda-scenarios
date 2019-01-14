@@ -1,5 +1,5 @@
 {
-  "title": "Sharded MongoDB on Kubernetes with persistent volumes on NFS share",
+  "title": "Sharded MongoDB on K8s with persistent volumes on NFS share",
   "description": "Learn how to deploy sharded cluster of MongoDB on Kubernetes cluster and NFS share as persistent volume claims",
   "difficulty": "PRO",
   "time": "1 minute",
