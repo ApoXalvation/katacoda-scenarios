@@ -1,6 +1,6 @@
 {
-  "title": "Sharded MongoDB with K8s",
-  "description": "Sharded MognoDB with Kubernetes",
+  "title": "Sharded MongoDB on Kubernetes with persistent volumes on NFS share",
+  "description": "Learn how to deploy sharded cluster of MongoDB on Kubernetes cluster and NFS share as persistent volume claims",
   "difficulty": "PRO",
   "time": "1 minute",
   "details": {
@@ -67,7 +67,7 @@
     }
   },
   "environment": {
-    "uilayout": "terminal-terminal",
+    "uilayout": "terminal-terminal-terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
   },
   "backend": {
