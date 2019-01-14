@@ -29,10 +29,10 @@ Check replicasets<br>
 k exec -n mongo configsvr-0 -c configsvr-container -- mongo --port 27019 --eval "rs.status();"
 `{{execute HOST1}}<br>
 `
-k exec -n mongo shard1-0 -c configsvr-container -- mongo --port 27018 --eval "rs.status();"
+k exec -n mongo shard1-0 -c shard1-container -- mongo --port 27018 --eval "rs.status();"
 `{{execute HOST1}}<br>
 `
-k exec -n mongo shard2-0 -c configsvr-container -- mongo --port 27018 --eval "rs.status();"
+k exec -n mongo shard2-0 -c shard2-container -- mongo --port 27018 --eval "rs.status();"
 `{{execute HOST1}}<br>
 Check sharded MongoDB cluster<br>
 `

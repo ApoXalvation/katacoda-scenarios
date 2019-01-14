@@ -12,5 +12,5 @@ We create service for mongos, then the StatefulSet with two replicas, then launc
 To deplay MongoS run:<br>
 `k apply -f mongos.yaml`{{execute HOST1}}<br>
 To watch the process use:<br>
-`watch -n1 'kubectl get pods -n mongo; kubectl get pvc -n mongo'`{{execute HOST1}}<br>
+`watch -n1 'kubectl get pods -n mongo -o wide; kubectl get pvc -n mongo'`{{execute HOST1}}<br>
 Type <kbd>ctr</kbd>+<kbd>c</kbd> to stop watching.
