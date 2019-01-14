@@ -7,7 +7,7 @@ _<a href="https://docs.mongodb.com/manual/core/sharded-cluster-query-router/">cl
 Open mongos.yaml:<br>
 `cat mongos.yaml`{{execute HOST1}}<br>
 This config is less complex than any prevoius, it does not need persistant volume becouse all data is cached into ram.<br>
-We create service for mongos, then the StatefulSet with two replicas, then launch mongos, with addresses of MongoDB config servers replicaset, and listen on port 27017.<br>
+We create service for mongos, then the StatefulSet with two replicas, then launch mongos, with addresses of MongoDB config servers replicaset, and listen on port 27017. And in this case pods with mongos instances should be propagate on each nodes, same as configsvr.<br>
 ## Task
 To deplay MongoS run:<br>
 `k apply -f mongos.yaml`{{execute HOST1}}<br>

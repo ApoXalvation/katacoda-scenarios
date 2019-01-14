@@ -50,6 +50,21 @@ And becouse We append this *StatefulSet* to *service configsvr* We expose port 2
 We launch *three replicas* becouse We need to create mongodb replicaset to achive high avability and becouse mongo do not allow create stand alone nodes for shards nor config server since mongo 3.6.<br>
 `
 ‎     spec:
+‎       affinity:
+‎         podAntiAffinity:
+‎           preferredDuringSchedulingIgnoredDuringExecution:
+‎           - weight: 100
+‎             podAffinityTerm:
+‎               labelSelector:
+‎                 matchExpressions:
+‎                 - key: role
+‎                   operator: In
+‎                   values:
+‎                   - configsvr
+‎               topologyKey: kubernetes.io/hostname
+`<br>
+It is time for affinity part, in this case pods with configsvr instances should be propagate on each nodes - for that We check if label role with value configsvr exists on node, and if it is, try to take another node. If all nodes have this label set then, becouse it is "preferred" policy, put it anywhere.<br> 
+`
 ‎       terminationGracePeriodSeconds: 10
 ‎       containers:
 ‎         - name: configsvr-container
@@ -99,5 +114,5 @@ use:
 Lets deploy the MongoDB config servers<br>
 `k apply -f configsvr.yaml`{{execute HOST1}}<br>
 You may observe the process of creating pods and persistent volume claims for them, using below command:<br>
-`watch -n1 'kubectl get all -n mongo; kubectl get pvc -n mongo'`{{execute HOST1}}<br>
+`watch -n1 'kubectl get pods -n mongo -o wide; kubectl get pvc -n mongo'`{{execute HOST1}}<br>
 Type <kbd>ctr</kbd>+<kbd>c</kbd> to stop watching.
