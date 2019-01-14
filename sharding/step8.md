@@ -26,15 +26,15 @@ k exec -n mongo mongos-0 -- mongo --port 27017 --eval "sh.addShard(\"shard2/shar
 ## CHECK
 Check replicasets
 `
-k exec -n mongo configsvr-0 -c configsvr-container --port 27019 --eval "rs.status();"
+k exec -n mongo configsvr-0 -c configsvr-container -- mongo --port 27019 --eval "rs.status();"
 `{{execute HOST1}}
 `
-k exec -n mongo shard1-0 -c configsvr-container --port 27018 --eval "rs.status();"
+k exec -n mongo shard1-0 -c configsvr-container -- mongo --port 27018 --eval "rs.status();"
 `{{execute HOST1}}
 `
-k exec -n mongo shard2-0 -c configsvr-container --port 27018 --eval "rs.status();"
+k exec -n mongo shard2-0 -c configsvr-container -- mongo --port 27018 --eval "rs.status();"
 `{{execute HOST1}}
 Check sharded MongoDB cluster
 `
-k exec -n mongo mongos-0 --port 27017 --eval "sh.status();"
+k exec -n mongo mongos-0 -- mongo --port 27017 --eval "sh.status();"
 `{{execute HOST1}}

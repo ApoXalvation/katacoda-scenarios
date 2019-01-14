@@ -10,4 +10,5 @@ _If You are wondering what does this script do, please take a look at <a href="h
 You can now join the second host to the cluster by running the following command:
 `kubeadm join [[HOST1_IP]]:6443 --token 96771a.f608976060d16396 --discovery-token-unsafe-skip-ca-verification`{{execute HOST2}}<br><br>
 After about a one minute both nodes should be _Ready_, You can check the statuses by executing this command on master node:<br>
-`kubectl get nodes`{{execute HOST1}}
+`kubectl get nodes`{{execute HOST1}}<br>
+You do not have to wait, in next step We need to install NFS packages so it may proceed in the background.
