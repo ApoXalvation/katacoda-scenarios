@@ -19,5 +19,4 @@ Prepare mount point on host1:<br>
 `mount -t nfs -o proto=tcp,port=2049 [[HOST2_IP]]:/root/nfs-share /root/host2`{{execute HOST1}}<br>
 then You may check if files are accessible on both hosts:<br>
 `touch /root/nfs-share/test`{{execute HOST2}}<br>
-<br>
 `ls /root/host2/`{{execute HOST1}}<br>

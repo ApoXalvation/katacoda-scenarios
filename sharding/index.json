@@ -52,6 +52,10 @@
     {
       "title": "Step 7 - MongoS",
       "text": "step7.md"
+    },
+    {
+      "title": "Step 8 - Create MongoSB replicasets and cluster",
+      "text": "step8.md"
     }
     ],
     "intro": {
