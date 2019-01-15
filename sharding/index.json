@@ -1,8 +1,8 @@
 {
   "title": "Sharded MongoDB on K8s with persistent volumes on NFS share",
-  "description": "Learn how to deploy sharded cluster of MongoDB on Kubernetes cluster and NFS share as persistent volume claims",
-  "difficulty": "PRO",
-  "time": "1 minute",
+  "description": "Learn how to deploy sharded cluster of MongoDB on Kubernetes cluster with pods affinity and NFS share as persistent volume claims",
+  "difficulty": "Intermediate",
+  "time": "20 minutes",
   "details": {
     "assets":{
       "host01": [
@@ -68,7 +68,8 @@
   },
   "environment": {
     "uilayout": "terminal-terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal.\r\nStart Kubernetes using `launch.sh`\u001b[m\r\n"
+    "uimessage1": "Starting Kubernetes Cluster using `launch.sh`\r\n",
+    "uimessage2": "Hello!\r\n"
   },
   "backend": {
     "imageid": "kubernetes-cluster"

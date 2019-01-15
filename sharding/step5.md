@@ -35,7 +35,7 @@ kind: StatefulSet
 metadata:
   name: configsvr
   namespace: mongo`<br>
-Next, We use beta api version because our StatefulSet will use nfs persistent volume claims which are not present in stable api yet.<br>
+Next, We use beta api version because We will use StatefulSets which are not present in stable api yet.<br>
 `
 ‎ spec:
 ‎   selector:
