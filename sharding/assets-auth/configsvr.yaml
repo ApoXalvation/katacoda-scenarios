@@ -43,6 +43,11 @@ spec:
                   - configsvr
               topologyKey: kubernetes.io/hostname
       terminationGracePeriodSeconds: 10
+      volumes:
+        - name: mongokeyfile
+          secret:
+            secretName: mongokeyfile
+            defaultMode: 256
       containers:
         - name: configsvr-container
           image: mongo
@@ -50,6 +55,7 @@ spec:
             - "mongod"
             - "--port"
             - "27019"
+            - "--auth"
             - "--replSet"
             - "configsvr"
             - "--bind_ip"
@@ -57,11 +63,16 @@ spec:
             - "--configsvr"
             - "--dbpath"
             - "/mongo-disk"
+            - "--keyFile"
+            - "/secret/mongodb-keyfile"
           ports:
             - containerPort: 27019
           volumeMounts:
             - name: data
               mountPath: /mongo-disk
+            - name: mongokeyfile
+              readOnly: true
+              mountPath: /secret
   volumeClaimTemplates:
   - metadata:
       name: data

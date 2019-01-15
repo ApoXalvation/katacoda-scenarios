@@ -34,11 +34,6 @@ spec:
       nodeSelector:
         kubernetes.io/hostname : node01
       terminationGracePeriodSeconds: 10
-      volumes:
-        - name: mongokeyfile
-          secret:
-            secretName: mongokeyfile
-            defaultMode: 256
       containers:
         - name: shard2-container
           image: mongo
@@ -46,7 +41,6 @@ spec:
             - "mongod"
             - "--port"
             - "27018"
-            - "--auth"
             - "--bind_ip"
             - "0.0.0.0"
             - "--replSet"
@@ -54,16 +48,11 @@ spec:
             - "--shardsvr"
             - "--dbpath"
             - "/mongo-disk"
-            - "--keyFile"
-            - "/secret/mongodb-keyfile"
           ports:
             - containerPort: 27018
           volumeMounts:
             - name: data
               mountPath: /mongo-disk
-            - name: mongokeyfile
-              readOnly: true
-              mountPath: /secret
   volumeClaimTemplates:
   - metadata:
       name: data

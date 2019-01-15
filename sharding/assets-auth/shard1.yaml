@@ -1,67 +1,69 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: configsvr
+  name: shard1
   namespace: mongo
   labels:
-    name: configsvr
+    name: shard1
 spec:
   ports:
-  - port: 27019
-    targetPort: 27019
+  - port: 27018
+    targetPort: 27018
   clusterIP: None
   selector:
-    role: configsvr
+    role: shard1
 ---
 apiVersion: apps/v1beta2
 kind: StatefulSet
 metadata:
-  name: configsvr
+  name: shard1
   namespace: mongo
 spec:
   selector:
     matchLabels:
-      role: configsvr
-  serviceName: configsvr
+      role: shard1
+  serviceName: shard1
   replicas: 3
   template:
     metadata:
       labels:
-        role: configsvr
-        tier: configsvr
+        role: shard1
+        tier: shard
+        replicaset: shard1
     spec:
-      affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - weight: 100
-            podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: role
-                  operator: In
-                  values:
-                  - configsvr
-              topologyKey: kubernetes.io/hostname
+      nodeSelector:
+        kubernetes.io/hostname : master
       terminationGracePeriodSeconds: 10
+      volumes:
+        - name: mongokeyfile
+          secret:
+            secretName: mongokeyfile
+            defaultMode: 256
       containers:
-        - name: configsvr-container
+        - name: shard1-container
           image: mongo
           command:
             - "mongod"
             - "--port"
-            - "27019"
-            - "--replSet"
-            - "configsvr"
+            - "27018"
+            - "--auth"
             - "--bind_ip"
             - "0.0.0.0"
-            - "--configsvr"
+            - "--replSet"
+            - "shard1"
+            - "--shardsvr"
             - "--dbpath"
             - "/mongo-disk"
+            - "--keyFile"
+            - "/secret/mongodb-keyfile"
           ports:
-            - containerPort: 27019
+            - containerPort: 27018
           volumeMounts:
             - name: data
               mountPath: /mongo-disk
+            - name: mongokeyfile
+              readOnly: true
+              mountPath: /secret
   volumeClaimTemplates:
   - metadata:
       name: data

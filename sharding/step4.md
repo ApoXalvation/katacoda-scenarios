@@ -21,8 +21,4 @@ From now We will use _k_ except for kubectl to make things faster:<br>
 `k apply -f namespace.yaml`{{execute HOST1}}<br>
 Now We can check if our new namespace for mongo only was created and what is inside:<br>
 `k get ns`{{execute HOST1}}<br>
-Create new volumen `secret` and generate kay for MongoDB:
-`openssl rand -base64 741 > mongodb-keyfile`{{execute HOST1}}<br>
-`kubectl create secret generic mongokeyfile --from-file=./mongodb-keyfile -n mongo`{{execute HOST1}}<br>
 `k get all -n mongo`{{execute HOST1}}<br>
-`k get secret -n mongo`{{execute HOST1}}
