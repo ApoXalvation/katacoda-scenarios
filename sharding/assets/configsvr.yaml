@@ -65,7 +65,7 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /mongo-disk
-            - name: secret
+            - name: mongokeyfile
               readOnly: true
               mountPath: /secret
   volumeClaimTemplates:
