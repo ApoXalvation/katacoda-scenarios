@@ -1,1 +1,1 @@
-Welcome to Sharded MognoDB with Kubernetes tutorial!
+Welcome to Sharded MongoDB with Kubernetes tutorial!

@@ -1,16 +1,16 @@
-We have solid basement for MongoDB:<br>
+We have a solid basement for MongoDB:<br>
  - Kubernetes cluster<br>
  - NFS server<br>
  - nfs-client-provisioner<br>
 
-Now it is time for Mongo, but before that You should take a look at how many things We have running now to achive this basement<br>
+Now it is time for Mongo, but before that, You should take a look at how many things We have running now.<br>
 `kubectl get all --all-namespaces`{{execute HOST1}}<br>
-What we do now is create a separate namespace for MongoDB to have things organized<br>
+Create a separate namespace for MongoDB to have things organised <br>
 ## Task
 
-We will have a few yaml templates in a moment so it is a good idea to create new working directory:<br>
+We will have a few yaml templates in a moment, so it is a good idea to create new working directory:<br>
 `mkdir /root/mongodb; cd /root/mongodb`{{execute HOST1}}<br>
-Now We want to create a new namespace for our MongoDB deplayment:<br>
+Now We want to create a new namespace for our MongoDB deployment:<br>
 `echo "
 apiVersion: v1
 kind: Namespace

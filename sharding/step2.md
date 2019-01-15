@@ -1,19 +1,18 @@
-
-We will need nfs server for persistent volume claims for our shards, so lets configure one on host2
+We will need nfs server for persistent volume claims for our shards, so let's configure one on host2
 
 ## Task
 Update and install nfs-kernel-server on host2:<br>
 `apt-get install nfs-kernel-server`{{execute HOST2}}<br>
 and nfs client on host1:<br>
 `apt-get install nfs-common`{{execute HOST1}}<br>
-then prepare shared sirectory (host2):<br>
+then prepare shared directory (host2):<br>
 `mkdir /root/nfs-share`{{execute HOST2}}<br>
 define what we want to share and who may connect(host2):<br>
 `echo "/root/nfs-share [[HOST1_IP]]/16(rw,no_root_squash)" >> /etc/exports`{{execute HOST2}}<br>
 <br>
 `service nfs-kernel-server restart`{{execute HOST2}}<br>
 ## Tests
-Our NFS server is up'n'ready, lets test it:<br>
+Our NFS server is up'n'ready, let's test it:<br>
 Prepare mount point on host1:<br>
 `mkdir /root/host2`{{execute HOST1}}<br>
 `mount -t nfs -o proto=tcp,port=2049 [[HOST2_IP]]:/root/nfs-share /root/host2`{{execute HOST1}}<br>

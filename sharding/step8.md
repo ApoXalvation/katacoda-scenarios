@@ -1,4 +1,4 @@
-Now it is time to create replicasets for configsvr, shard1 and shard2, and in the end attach shards to cluster of MongoDB
+Now it is time to create replicasets for configsvr, shard1 and shard2, and in the end, attach shards to the cluster of MongoDB
 ## Task
 initiate configsvr replicaset <br>
 `

@@ -3,17 +3,17 @@ Together, the cluster’s shards hold the entire data set for the cluster.<br>
 ## Description
 Open shard1.yaml:<br>
 `cat shard1.yaml`{{execute HOST1}}<br>
-This file and second one `shard2.yaml` has very common body with previous one - configsvr.yaml.<br>
-We create service for both shards, then the StatefulSet with three replicas, then launch mongod, but this time with the `--shardsvr` parameter, and listen on port 27018. On the end We create and attach persistend volume claims to each pod.<br>
-Lets try to put each shard on differ node: shard1 = master<br>
+This file and second one `shard2.yaml` have  common body with a previous one - configsvr.yaml.<br>
+We create service for both shards, then the StatefulSet with three replicas, then launch mongod, but this time with the `--shardsvr` parameter, and listen on port 27018. In the end We create and attach persistent volume claims to each pod.<br>
+Let's try to put each shard on differ node: shard1 = master<br>
 `      nodeSelector:
         kubernetes.io/hostname : master`<br>
-and shard2 = node01:
+and shard2 = node01:<br>
 `      nodeSelector:
         kubernetes.io/hostname : node01`<br>
 <br>
 ## Task
-To deplay MongoDB shards run:<br>
+To deploy MongoDB shards run:<br>
 `k apply -f shard1.yaml`{{execute HOST1}}<br>
 `k apply -f shard2.yaml`{{execute HOST1}}<br>
 To watch the process use:<br>
