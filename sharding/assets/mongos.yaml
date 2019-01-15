@@ -57,7 +57,7 @@ spec:
             - "27017"
             - "--bind_ip"
             - "0.0.0.0"
-            - "--keyfile"
+            - "--keyFile"
             - "/secret/mongodb-keyfile"
             - "--configdb"
             - "configsvr/configsvr-0.configsvr:27019, configsvr-1.configsvr:27019, configsvr-2.configsvr:27019"
