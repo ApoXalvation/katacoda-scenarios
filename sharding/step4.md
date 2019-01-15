@@ -25,4 +25,4 @@ Create new volumen `secret` and generate kay for MongoDB:
 `openssl rand -base64 741 > mongodb-keyfile`{{execute HOST1}}<br>
 `kubectl create secret generic mongokeyfile --from-file=./mongodb-keyfile -n mongo`{{execute HOST1}}<br>
 `k get all -n mongo`{{execute HOST1}}<br>
-`k get secret`{{execute HOST1}}
+`k get secret -n mongo`{{execute HOST1}}
