@@ -41,7 +41,6 @@ spec:
             - "mongod"
             - "--port"
             - "27018"
-            - "--auth"
             - "--bind_ip"
             - "0.0.0.0"
             - "--replSet"
@@ -49,16 +48,11 @@ spec:
             - "--shardsvr"
             - "--dbpath"
             - "/mongo-disk"
-            - "--keyFile"
-            - "/secret/mongodb-keyfile"
           ports:
             - containerPort: 27018
           volumeMounts:
             - name: data
               mountPath: /mongo-disk
-            - name: secret
-              readOnly: true
-              mountPath: /secret
   volumeClaimTemplates:
   - metadata:
       name: data
