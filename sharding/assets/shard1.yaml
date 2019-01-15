@@ -34,6 +34,11 @@ spec:
       nodeSelector:
         kubernetes.io/hostname : master
       terminationGracePeriodSeconds: 10
+      volumes:
+        - name: mongokeyfile
+          secret:
+            secretName: mongokeyfile
+            defaultMode: 256
       containers:
         - name: shard1-container
           image: mongo
